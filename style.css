@@ -1,0 +1,236 @@
+:root {
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --panel-alt: #eef3ff;
+  --text: #1f2937;
+  --muted: #4b5563;
+  --border: #d7deea;
+  --primary: #164e63;
+  --primary-strong: #0f3a4d;
+  --button: #0f52ba;
+  --button-hover: #0d459a;
+  --danger-bg: #fef2f2;
+  --danger-border: #ef4444;
+  --warning-bg: #fff7ed;
+  --warning-border: #f59e0b;
+  --safe-bg: #ecfdf5;
+  --safe-border: #10b981;
+  --shadow: rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px 20px 20px;
+}
+
+.site-header {
+  margin-bottom: 24px;
+}
+
+.site-header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  line-height: 1.2;
+  color: var(--primary-strong);
+}
+
+.tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.checker,
+.results,
+.info-section {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px var(--shadow);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+textarea {
+  width: 100%;
+  min-height: 180px;
+  resize: vertical;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font: inherit;
+  background: #fff;
+  color: var(--text);
+}
+
+textarea:focus,
+button:focus {
+  outline: 3px solid #facc15;
+  outline-offset: 3px;
+}
+
+.privacy-note {
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+button {
+  appearance: none;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#check-button {
+  background: var(--button);
+  color: #fff;
+}
+
+#check-button:hover,
+#check-button:focus {
+  background: var(--button-hover);
+}
+
+.secondary-button {
+  background: var(--panel-alt);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.secondary-button:hover,
+.secondary-button:focus {
+  background: #e4ebff;
+}
+
+.results {
+  display: block;
+}
+
+.verdict {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.verdict-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.verdict-high {
+  background: var(--danger-bg);
+  border-color: var(--danger-border);
+}
+
+.verdict-medium {
+  background: var(--warning-bg);
+  border-color: var(--warning-border);
+}
+
+.verdict-low {
+  background: var(--safe-bg);
+  border-color: var(--safe-border);
+}
+
+.verdict-high .verdict-label::before {
+  content: "High risk";
+}
+
+.verdict-medium .verdict-label::before {
+  content: "Be careful";
+}
+
+.verdict-low .verdict-label::before {
+  content: "Low risk";
+}
+
+.results-block h2,
+.info-section h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+li + li {
+  margin-top: 8px;
+}
+
+.site-footer {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .checker,
+  .results,
+  .info-section {
+    padding: 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}

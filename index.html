@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scam Check</title>
+    <meta
+      name="description"
+      content="Scam Check helps people review suspicious messages and see possible warning signs."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="site-header">
+        <h1>Scam Check</h1>
+        <p class="tagline">Paste a message you're unsure about. We'll point out warning signs.</p>
+      </header>
+
+      <section class="checker" aria-labelledby="message-label">
+        <label id="message-label" for="message-input">Paste the message here</label>
+        <textarea
+          id="message-input"
+          name="message"
+          rows="8"
+          placeholder="Paste a text, email, or description of a phone call"
+          aria-describedby="privacy-note"
+        ></textarea>
+
+        <p id="privacy-note" class="privacy-note">
+          Your message stays on your device. We don't send it anywhere or save it. Tip: remove account numbers or passwords before pasting.
+        </p>
+
+        <div class="actions">
+          <button id="check-button" type="button">Check this message</button>
+          <button id="clear-button" type="button" class="secondary-button">Clear</button>
+        </div>
+      </section>
+
+      <section id="results" class="results" hidden>
+        <div id="verdict" class="verdict verdict-low" aria-live="polite">
+          <span class="verdict-label" aria-hidden="true">Status:</span>
+          <span class="verdict-text">Result</span>
+        </div>
+
+        <div class="results-block">
+          <h2>Warning signs</h2>
+          <ul id="flags" aria-live="polite"></ul>
+        </div>
+
+        <div class="results-block">
+          <h2>What to do next</h2>
+          <ul id="next-steps" aria-live="polite"></ul>
+        </div>
+      </section>
+
+      <section class="info-section" aria-labelledby="fell-for-it-title">
+        <h2 id="fell-for-it-title">Already clicked, replied, or paid?</h2>
+        <div id="fell-for-it"></div>
+      </section>
+
+      <section class="info-section" aria-labelledby="scam-library-title">
+        <h2 id="scam-library-title">Common scams</h2>
+        <div id="scam-library"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>This tool gives general guidance only and cannot guarantee any message is safe or unsafe.</p>
+    </footer>
+
+    <script src="patterns.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
